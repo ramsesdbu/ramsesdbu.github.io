@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PDF Viewer</title>
+  <style>
+    body { margin: 0; background: #121212; color: #fff; font-family: "Poppins", sans-serif; }
+    header { padding: 10px 20px; background: #1e1e1e; text-align: center; font-weight: 500; }
+    iframe { width: 100%; height: calc(100vh - 50px); border: none; }
+  </style>
+</head>
+<body>
+  <header id="pdfTitle">Loading...</header>
+  <iframe id="pdfFrame"></iframe>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get('file') || '';
+    const title = decodeURIComponent(params.get('title') || 'PDF Viewer');
+
+    document.title = title;
+    document.getElementById('pdfTitle').textContent = title;
+    document.getElementById('pdfFrame').src = file;
+  </script>
+</body>
+</html>
