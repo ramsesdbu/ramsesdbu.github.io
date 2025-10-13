@@ -1421,3 +1421,7 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+/* Custom adjustment for section positioning */
+.section-up {
+  margin-top: -68px !important;
+}
