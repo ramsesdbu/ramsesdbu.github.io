@@ -101,22 +101,22 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/js/main.js"></script>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  let startX = 0;
-  let endX = 0;
-  const minSwipeDistance = 80; // jarak minimum swipe (px)
+  <script>
+	document.addEventListener('DOMContentLoaded', function() {
+	let startX = 0;
+	let endX = 0;
+	const minSwipeDistance = 80; // jarak minimum swipe (px)
 
-  document.addEventListener('touchstart', function(e) {
+	document.addEventListener('touchstart', function(e) {
     startX = e.touches[0].clientX;
-  });
+	});
 
-  document.addEventListener('touchend', function(e) {
+	document.addEventListener('touchend', function(e) {
     endX = e.changedTouches[0].clientX;
     handleSwipe();
-  });
+	});
 
-  function handleSwipe() {
+	function handleSwipe() {
     const distance = endX - startX;
     if (Math.abs(distance) < minSwipeDistance) return;
 
